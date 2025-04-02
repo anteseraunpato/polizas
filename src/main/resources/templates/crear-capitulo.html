@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear nuevo capítulo</title>
+    <link rel="stylesheet" th:href="@{/css/dashboard.css}">
+</head>
+<body>
+<div th:replace="fragments/navbar :: navbar"></div>
+<div th:fragment="content">
+    <h1>Crear nuevo capítulo</h1>
+
+    <form action="/crearcapitulo" method="post">
+        <label for="denominacion">Denominación:</label>
+        <input type="text" id="denominacion" name="denominacion" required>
+
+        <label for="numCap">Número de capítulo:</label>
+        <input type="number" id="numCap" name="numCap" required>
+
+        <button type="submit">Crear Capítulo</button>
+    </form>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>CAPITULO</th>
+            <th>DENOMINACIÓN CAPÍTULO</th>
+
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="capitulo : ${capitulos}">
+            <td th:text="${capitulo.id}"></td>
+            <td th:text="${capitulo.numeroCap}"></td>
+            <td th:text="${capitulo.denominacion}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+</body>
+</html>

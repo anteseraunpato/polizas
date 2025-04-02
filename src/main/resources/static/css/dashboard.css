@@ -1,0 +1,253 @@
+/* Estilos globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --verdepino:#004d3b;
+    --verde:#00b389;
+    --verdepastel: #E2F1DA;
+    --verdepino-muted: #3e8672;
+    --hueso: #fffaec;
+    --lavanda: #d5c4fd;
+    --lima: #d5f27e;
+    --blanco: #f5f5f5;
+    --negro: #222;
+    --gris: #555;
+    --gris-claro:#b2b2b2;
+}
+
+/* Fondo y colores principales*/
+body {
+    font-family: "Inter", Arial, sans-serif;
+    font-feature-settings: "liga" 1, "onum" 1, "calt" 1,;
+    letter-spacing: -4%;
+    background-color: var(--blanco);
+    color: var(--verdepino);
+    text-align: center;
+}
+
+h1 {
+margin: 0 10px;
+}
+
+h2 {
+margin: 8px 0 3px 0;
+}
+
+/* Barra de navegación */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Centra la barra de navegación */
+    padding: 12px 24px;
+    margin-bottom: 8px;
+}
+
+/* Logo alineado y más grande */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.logo {
+    width: 60px; /* Tamaño del logo aumentado */
+    height: auto;
+    margin-right: 20px;
+}
+
+/* Contenedor del menú */
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Elementos del menú */
+.nav-item {
+    list-style: none;
+}
+
+/* Enlaces del menú con contorno */
+.nav-link {
+    color: var(--verdepino);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 4px 8px;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.nav-link:hover {
+    border-bottom: 3px solid var(--lima);
+    color: var(--verdepino);
+    transition: all 0.3s ease;
+}
+
+/* ✅ Estilos cuando está activo */
+.navbar .nav-link.active {
+    background-color: #E2F1DA;  /* Color sólido */
+    color: #004D32;
+    border-color: #E2F1DA;
+}
+
+
+/* Botón de menú en móviles */
+.navbar-toggler {
+    display: none;
+    background: none;
+    border: 2px solid #E2F1DA; /* Contorno */
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.navbar-toggler-icon {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    display: block;
+    margin: 5px 0;
+}
+
+/* Hover para el botón del menú */
+.navbar-toggler:hover {
+    background-color: #E2F1DA;
+}
+
+.navbar-toggler:hover .navbar-toggler-icon {
+    background-color: #004D32;
+}
+
+form {
+margin: 6px;
+}
+
+/* Responsividad para dispositivos pequeños */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-toggler {
+        display: block;
+    }
+
+    .collapse {
+        display: none;
+        width: 100%;
+    }
+
+    .collapse.show {
+        display: block;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding-top: 10px;
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+}
+
+/* Estilos para la tabla */
+.table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 16px auto;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    color: #004D32;
+}
+
+/* Encabezados */
+.table th {
+    background-color: #004D32;
+    color: var(--blanco);
+    padding: 12px;
+    text-align: center;
+}
+
+/* Celdas de la tabla */
+.table td, .table th {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+/* Filas alternas */
+.table tr:nth-child(even) {
+    background-color: var(--verdepastel);
+}
+
+/* Hover en filas */
+.table tr:hover {
+    background-color: var(--lima);
+    transition: 0.3s;
+}
+
+/* Botón */
+.btn {
+    display: inline-block;
+    background-color: #004D32;
+    color: var(--hueso);
+    height: 36px;
+    padding: 0 16px;
+    text-decoration: none;
+    border: none;
+    border-radius: 3px;
+    transition: background 0.3s;
+    margin: 15px 0;
+}
+
+.btn:hover {
+    background-color: var(--hueso);
+    color: var(--verdepino);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .table {
+        font-size: 14px;
+    }
+
+    .table th, .table td {
+        padding: 8px;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        border-color: black;
+    }
+
+}
+
+input {
+  font-size: 16px;
+  padding: 10px 10px 10px 5px;
+  border: none;
+  border: 1px solid var(--gris);
+  background: white;
+  border-radius: 5px;
+  margin: 0 6px 0 0;
+}
+
+input:focus {
+  outline: none;
+}
+
+

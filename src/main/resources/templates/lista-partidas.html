@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>LISTA DE PARTIDAS</title>
+    <link rel="stylesheet" th:href="@{/css/dashboard.css}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+<div th:replace="fragments/navbar :: navbar"></div>
+<div th:fragment="content">
+    <br>
+    <h1>LISTA DE PARTIDAS</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>CAPITULO</th>
+            <th>DENOMINACIÓN CAPÍTULO</th>
+            <th>PARTIDA</th>
+            <th>DENOMINACIÓN PARTIDA</th>
+
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="partida : ${partidas}">
+            <td th:text="${partida.id}"></td>
+            <td th:text="${partida.capitulos.numeroCap}"></td>
+            <td th:text="${partida.capitulos.denominacion}"></td>
+            <td th:text="${partida.numeroPartida}"></td>
+            <td th:text="${partida.denominacion}"></td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

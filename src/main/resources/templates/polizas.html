@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es-mx" xml:lang="es-mx">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Facturas guardadas</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+<div th:replace="fragments/navbar :: navbar"></div>
+<div th:fragment="content">
+    <h1>Facturas guardadas</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Fecha</th>
+            <th>Nombre de la Empresa</th>
+            <th>RFC</th>
+            <th>Cargo</th>
+            <th>Acciones</th> <!-- Nueva columna para el botón de eliminar -->
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="factura : ${facturas}">
+            <td th:text="${factura.id}"></td>
+            <td th:text="${#dates.format(factura.fecha, 'dd/MM/yyyy')}"></td>
+            <td th:text="${factura.nombreEmpresa}"></td>
+            <td th:text="${factura.rfc}"></td>
+            <td th:text="${factura.cargo}"></td>
+            <td>
+                <form method="POST" th:action="@{/delete/{id}(id=${factura.id})}">
+                    <button type="submit">Eliminar</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!-- Botón para ir a otra página -->
+    <button class="btn" onclick="window.location.href='/generar-polizas'">Ir a Generar Pólizas</button>
+</div>
+</body>
+</html>

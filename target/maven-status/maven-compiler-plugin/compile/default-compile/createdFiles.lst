@@ -1,0 +1,15 @@
+com\example\login_rest\controllers\TemplateDashboardController.class
+com\example\login_rest\controllers\TemplateAuthController.class
+com\example\login_rest\LoginRestApplication.class
+com\example\login_rest\config\JWTUtil.class
+com\example\login_rest\dto\RequestRegisterUser.class
+com\example\login_rest\repository\UserRepository.class
+com\example\login_rest\service\AuthService.class
+com\example\login_rest\controllers\ExampleController.class
+com\example\login_rest\service\ExampleService.class
+com\example\login_rest\controllers\AuthController.class
+com\example\login_rest\dto\ResponseLoginUser.class
+com\example\login_rest\config\SecurityConfig.class
+com\example\login_rest\dto\RequestLoginProxy.class
+com\example\login_rest\dto\ResponseRegisterUserProxy.class
+com\example\login_rest\model\User.class
